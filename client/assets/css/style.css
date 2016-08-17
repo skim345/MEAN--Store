@@ -1,0 +1,321 @@
+*{
+	font-family: "Tahoma";
+	padding: 0px;
+	margin: 0px;
+}
+.topNav{
+	width: 100%;
+	height: 3%;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4c4c4c+0,595959+12,666666+25,474747+39,2c2c2c+50,000000+51,111111+60,2b2b2b+76,1c1c1c+91,131313+100;Black+Gloss+%231 */
+	background: rgb(76,76,76); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(76,76,76,1) 0%, rgba(89,89,89,1) 12%, rgba(102,102,102,1) 25%, rgba(71,71,71,1) 39%, rgba(44,44,44,1) 50%, rgba(0,0,0,1) 51%, rgba(17,17,17,1) 60%, rgba(43,43,43,1) 76%, rgba(28,28,28,1) 91%, rgba(19,19,19,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  rgba(76,76,76,1) 0%,rgba(89,89,89,1) 12%,rgba(102,102,102,1) 25%,rgba(71,71,71,1) 39%,rgba(44,44,44,1) 50%,rgba(0,0,0,1) 51%,rgba(17,17,17,1) 60%,rgba(43,43,43,1) 76%,rgba(28,28,28,1) 91%,rgba(19,19,19,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  rgba(76,76,76,1) 0%,rgba(89,89,89,1) 12%,rgba(102,102,102,1) 25%,rgba(71,71,71,1) 39%,rgba(44,44,44,1) 50%,rgba(0,0,0,1) 51%,rgba(17,17,17,1) 60%,rgba(43,43,43,1) 76%,rgba(28,28,28,1) 91%,rgba(19,19,19,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313',GradientType=0 ); /* IE6-9 */
+}
+	.topNav a{
+		text-decoration: none;
+		font-size: 13px;
+		color: white;
+		font-weight: bold;
+	}
+	.topNav .first{
+		margin-left: 1%;
+	}
+body{
+	background-color: black;
+}
+.errors{
+	color: white;
+}
+.leftNav{
+	width: 10%;
+	min-height: 90%;
+	margin-top: 2%;
+	display: inline-block;
+	vertical-align: top;
+	/*outline: 1px dotted green;*/
+	margin-left: 1%;
+}
+#leftInput{
+	display: inline;
+}
+#rightDash{
+	display: inline-block;
+	margin-top: 2%;
+	/*outline: 1px dotted blue;*/
+	width: 80%;
+	vertical-align: top;
+	margin-left: 1%;
+}
+
+#dashProducts{
+	display: inline-block;
+	/*outline: 1px dotted blue;*/
+	width: 13.5%;
+	vertical-align: top;
+	margin-right: 1%;
+	margin-bottom: 2%;
+}
+	#dashProducts img{
+		width: 200px;
+		height: 200px;
+		border: 1px solid gray;
+		padding: 2.5px;
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cedce7+0,596a72+100;Grey+3D+%231 */
+		background: rgb(206,220,231); /* Old browsers */
+		background: -moz-linear-gradient(top,  rgba(206,220,231,1) 0%, rgba(89,106,114,1) 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top,  rgba(206,220,231,1) 0%,rgba(89,106,114,1) 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom,  rgba(206,220,231,1) 0%,rgba(89,106,114,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedce7', endColorstr='#596a72',GradientType=0 ); /* IE6-9 */
+	}
+	#dashProducts p{
+		text-align: center;
+		font-size: 12px;
+		color: white;
+	}
+	#dashProducts .itemName{
+		font-weight: bold;
+	}
+#rightDash a{
+	margin-left: 31%;
+	text-decoration: none;
+	color: white;
+	font-size: 16px;
+	font-weight: bold;
+}
+#dashOrders{
+	color: white;
+	margin-bottom: 1%;
+}
+	#dashOrders p{
+		margin-top: 1%;
+		margin-bottom: 1%;
+		font-size: 14px;
+		font-weight: bold;
+	}
+	#dashOrders ul{
+		margin-left: 1%;
+	}
+	#dashOrders li{
+		font-size: 12px;
+	}
+#dashCustomers{
+	color: white;
+	margin-bottom: 1%;
+	margin-top: 1%;
+}
+	#dashCustomers ul{
+		margin-left: 1%;
+	}
+	#dashCustomers li{
+		font-size: 12px;
+	}
+.leftNav .bold{
+	color: white;
+	font-size: 14px;
+}
+	.leftNav #searchProducts{
+		margin-top: 3%;
+		margin-bottom: 7%;
+	}
+#newProduct{
+	color: white;
+	display: inline-block;
+}
+	#newProduct .bold{
+		display: block;
+		font-size: 14px;
+		margin-bottom: 3%;
+	}
+	#newProduct label{
+		font-size: 12px;
+	}
+	#newProduct input, #newProduct textarea{
+		margin: 1% 0%;
+	}
+	#newProduct #createProduct{
+		border-radius: 5%;
+		padding: 1.5%;
+		font-weight: bold;
+		text-align: center;
+	}
+#rightProducts{
+	display: inline-block;
+	margin-top: 2%;
+	/*outline: 1px dotted blue;*/
+	width: 80%;
+	vertical-align: top;
+	margin-left: 1%;
+	color: white;
+}
+#productDescription{
+	display: inline-block;
+	/*outline: 1px dotted blue;*/
+	width: 13.5%;
+	vertical-align: top;
+	margin-right: 1%;
+	margin-bottom: 2%;
+}
+	#productDescription img{
+		width: 200px;
+		height: 200px;
+		border: 1px solid gray;
+		padding: 2.5px;
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cedce7+0,596a72+100;Grey+3D+%231 */
+		background: rgb(206,220,231); /* Old browsers */
+		background: -moz-linear-gradient(top,  rgba(206,220,231,1) 0%, rgba(89,106,114,1) 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top,  rgba(206,220,231,1) 0%,rgba(89,106,114,1) 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom,  rgba(206,220,231,1) 0%,rgba(89,106,114,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedce7', endColorstr='#596a72',GradientType=0 ); /* IE6-9 */
+	}
+	#productDescription p{
+		text-align: center;
+		font-size: 12px;
+		color: white;
+	}
+	#productDescription .itemName{
+		font-weight: bold;
+	}
+#orderTop{
+	width: 100%;
+	height: 5%;
+	/*outline: 1px dotted green;*/
+}
+#orderForm{
+	/*outline: 1px dotted red;*/
+	width: 100%;
+	margin-left: 1%;
+}
+#orderForm form{
+	color: white;
+	/*outline: 1px dotted blue;*/
+}
+	#orderForm form .bold{
+		color: white;
+		font-size: 14px;
+		display: block;
+		margin-bottom: 0.5%;
+	}
+	#orderForm form label{
+		font-size: 12px;
+	}
+	#orderForm form #createOrder{
+		border-radius: 5%;
+		padding: 0.15%;
+		font-weight: bold;
+		text-align: center;
+	}
+	#orderFilter input{
+		margin-left: 1%;
+		margin-top: 1%;
+		margin-bottom: 1%;
+	}
+#orderTable{
+	display: inline-block;
+	/*margin-top: 2%;*/
+	/*outline: 1px dotted yellow;*/
+	width: 80%;
+	vertical-align: top;
+	/*margin-left: 1%;*/
+	color: white;
+}
+	#orderTable table{
+		color: white;
+		font-size: 12px;
+		width: 45%;
+		color: black;
+		text-shadow: 1px 1px 0px #fff;
+		background:#eaebec;
+		margin:0px 20px 20px 20px;
+		border:#ccc 1px solid;
+		-moz-border-radius:3px;
+		-webkit-border-radius:3px;
+		border-radius:3px;
+		-moz-box-shadow: 0 1px 2px #d1d1d1;
+		-webkit-box-shadow: 0 1px 2px #d1d1d1;
+		box-shadow: 0 1px 2px #d1d1d1;
+	}
+	#orderTable th{
+		padding:5px 7px 5px 7px;
+		border-top:1px solid #fafafa;
+		border-bottom:1px solid #e0e0e0;
+		background: #ededed;
+		background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#ebebeb));
+		background: -moz-linear-gradient(top,  #ededed,  #ebebeb);
+	}
+#customerTop{
+	width: 100%;
+	height: 5%;
+	/*outline: 1px dotted yellow;*/
+	margin-bottom: 1%;
+}
+#customerForm{
+	/*outline: 1px dotted red;*/
+	width: 100%;
+	margin-left: 1%;
+}
+	#customerForm form{
+		color: white;
+
+	}
+	#customerForm form .bold{
+		color: white;
+		font-size: 14px;
+		display: block;
+		margin-bottom: 0.5%;
+	}
+	#customerForm form label{
+		font-size: 12px;
+	}
+	#customerForm form #createOrder{
+		border-radius: 5%;
+		padding: 0.15%;
+		font-weight: bold;
+		text-align: center;
+	}
+	#customerFilter input{
+		margin-left: 1%;
+		margin-bottom: 1%;
+	}
+	#customerTable{
+	display: inline-block;
+	/*margin-top: 2%;*/
+	/*outline: 1px dotted yellow;*/
+	width: 80%;
+	vertical-align: top;
+	/*margin-left: 1%;*/
+	color: white;
+}
+	#customerTable table{
+		color: white;
+		font-size: 12px;
+		width: 45%;
+		color: black;
+		text-shadow: 1px 1px 0px #fff;
+		background:#eaebec;
+		margin:0px 20px 20px 20px;
+		border:#ccc 1px solid;
+		-moz-border-radius:3px;
+		-webkit-border-radius:3px;
+		border-radius:3px;
+		-moz-box-shadow: 0 1px 2px #d1d1d1;
+		-webkit-box-shadow: 0 1px 2px #d1d1d1;
+		box-shadow: 0 1px 2px #d1d1d1;
+	}
+	#customerTable th{
+		padding:5px 7px 5px 7px;
+		border-top:1px solid #fafafa;
+		border-bottom:1px solid #e0e0e0;
+		background: #ededed;
+		background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#ebebeb));
+		background: -moz-linear-gradient(top,  #ededed,  #ebebeb);
+	}
+
+
+
+
+
+
+
+

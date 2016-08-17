@@ -1,0 +1,35 @@
+<div id="customerTop">
+	<div class="errors" ng-repeat="error in errors">{{error.name.message}}</div>
+	<div id="customerForm">
+		<form>
+			<label><span class="bold">Add a New Customer</label>
+			<label>Customer Name:</label>
+			<input type='text' ng-model = "newCustomer.name">
+			<input type="submit" value="Add Customer" ng-click="add()" id="createCustomer">
+		</form>
+	</div>
+</div>
+<div id="customerFilter">
+	<input type="text" ng-model="filter_customer" placeholder="Search Customers" id="searchCustomer">
+</div>
+<div id="customerTable">
+	<table>
+		<thead>
+			<tr>
+				<th>Customer Name</th>
+				<th>Created Date</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat = "customer in customers | orderBy: 'name' | filter: filter_customer">
+				{{customer}}
+				<td>{{customer.name}}</td>
+				<td>{{customer.createdAt}}</td>
+				<td><button ng-click="destroy(customer)">Remove</button></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+

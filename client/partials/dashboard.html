@@ -1,0 +1,26 @@
+<div class="leftNav">
+	<form>
+		<input id="leftInput"type="text" ng-model="dashboardFilter" placeholder="Filter Products">
+	</form>
+</div>
+<div id="rightDash">
+	<div id="dashProducts" ng-repeat="products in allProducts | limitTo:5 | filter: dashboardFilter">
+		<img ng-src="{{products.image}}">
+		<p class="itemName">{{products.item}}</p>
+		<p>({{products.quantity}} left)</p>
+	</div>
+	<a href="#/products">Show More Products</a>
+	<div id="dashOrders">
+		<p>Recent Orders</p>
+		<ul ng-repeat="order in allOrders | limitTo: 5">
+			<li>{{order.name}} purchased {{order.quantity}} {{order.product}}</li>
+		</ul>
+	</div>
+	<a class="link" href="#/orders">Show More Orders</a>
+	<div id="dashCustomers">
+		<ul ng-repeat="customers in allCustomers">
+			<li>{{customers.name}} joined the store on {{customers.createdAt}}</li>
+		</ul>
+	</div>
+	<a class="link" href="#/customers">Show More Customers</a>
+</div>

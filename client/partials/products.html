@@ -1,0 +1,26 @@
+<div class="leftNav">
+	<div class="errors" ng-repeat="error in errors">{{error}}</div>
+	<p><span class="bold">Search for a Specific Item</span></p>
+	<input id="searchProducts" type="text" placeholder="Search" ng-model="filterProducts">
+	<div id="newProduct">
+		<form>
+			<label><span class="bold">Add a New Product</span></label>
+			<label>Product Name:</label>
+			<input type="text" ng-model="newProduct.item">
+			<label>Image (url):</label>
+			<input type="text" ng-model="newProduct.image">
+			<label>Description</label>
+			<textarea ng-model="newProduct.description"></textarea>
+			<label>Initial Quantity(Between 1-100):</label>
+			<input type="number" min="1" max="100" ng-model="newProduct.quantity">
+			<input id="createProduct" type="submit" value="Create Product" ng-click="createProduct()">
+		</form>
+	</div>
+</div>
+<div id="rightProducts" >
+	<div id="productDescription" ng-repeat="products in allProducts | filter: filterProducts">
+		<img ng-src="{{products.image}}">
+		<p> Product Name: {{products.item}}</p>
+		<p>Quantity: {{products.quantity}}</p>
+	</div>
+</div>
