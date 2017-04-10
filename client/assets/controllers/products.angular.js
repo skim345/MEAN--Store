@@ -3,6 +3,7 @@ myApp.controller('productController', ['$scope', 'productFactory', function($sco
 	
 	$scope.errors=[];
 
+	// get all products
 	productFactory.getAllProducts(function(response){
 		if(!response.status){
 			$scope.errors.push(response.errors);
@@ -11,6 +12,7 @@ myApp.controller('productController', ['$scope', 'productFactory', function($sco
 		}
 	})
 
+	// create order
 	$scope.createProduct= function(){
 		console.log($scope.newProduct);
 		productFactory.createProduct($scope.newProduct, function(response){

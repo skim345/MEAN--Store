@@ -3,11 +3,11 @@ var Customer = mongoose.model('Customer');
 module.exports = (function(){
 	return{
 
-
-
+		// add a new customer
 		add: function(req,res){
-			// console.log(req.body);
+			// creating new customer
 			var newCustomer = new Customer({name: req.body.name});
+			// saving new customer
 			newCustomer.save(function(err){
 				if(err){
 					console.log(err);
@@ -17,6 +17,7 @@ module.exports = (function(){
 					}
 					res.json({status: false, errors: errorsArray});
 				}else{
+					// find all customer information and send to front
 					Customer.find({}, function(err, customers){
 						if(err){
 							console.log(err);
@@ -32,9 +33,8 @@ module.exports = (function(){
 				}
 			})
 		},
-
+		// delete customer
 		destroy: function(req, res){
-			// console.log(req.params.id);
 			Customer.remove({_id: req.params.id}, function(err){
 				if(err){
 					console.log(err);
@@ -59,7 +59,7 @@ module.exports = (function(){
 				}
 			})
 		},
-
+		// get all customers
 		getAll: function(req, res){
 			Customer.find({}, function(err, customers){
 				if(err){

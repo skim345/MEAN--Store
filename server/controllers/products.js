@@ -5,7 +5,7 @@ var Product = mongoose.model('Product');
 
 module.exports = (function(){
 	return{
-
+    // get all products
 		getAll: function(req, res){
 			Product.find({}, function(err, products){
 				if(err){
@@ -19,14 +19,11 @@ module.exports = (function(){
 				}
 			})
 		},
-
+    // create new product
 		create: function(req, res){
-			// console.log(req.body);
-			// {item: 'Flowers',
-  	// 		image: 'https://unsplash.it/200/300/?random',
-  	// 		description: 'Flowers',
-  	// 		quantity: 100 }
+      // creat new product
   		var newProduct = new Product({item: req.body.item, quantity: req.body.quantity, image: req.body.image, description: req.body.description});
+      // save product
   		newProduct.save(function(err, newProduct){
   			if(err){
   				var errorsArray= [];
@@ -35,6 +32,7 @@ module.exports = (function(){
   				}
   				res.json({status: false, errors: errorsArray});
   			}else{
+          // get all products and send to front
   				Product.find({}, function(err, products){
   					if(err){
   						var errorsArray=[];

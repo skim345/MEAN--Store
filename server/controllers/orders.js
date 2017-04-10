@@ -5,7 +5,7 @@ var Order = mongoose.model('Order');
 
 module.exports = (function(){
 	return{
-
+		// get all orders
 		getAllOrders: function(req, res){
 			Order.find({}, function(err, orders){
 				if(err){
@@ -20,29 +20,14 @@ module.exports = (function(){
 				}
 			})
 		},
-
+		// create a new order
 		createOrder: function(req, res){
-			// console.log(req.body);
-			// { 
-			// 	newName: 'Enrique Jocson',
-			// 	product: 'Flowers',
-			// 	quantity: 5 
-			// }
+			// create a new order
 			var newOrder = new Order({name: req.body.newName, product: req.body.product, quantity: req.body.quantity});
-			// console.log(newOrder);
-			// { name: 'Gary Tam',product: 'Flowers',quantity: 7,_id: 578ffa38f0c4dba0191e715e,_customer: [] }
+
+			// find the customer who made the order and update with new order info
 			Customer.findOneAndUpdate({name: req.body.newName},{$push:{"_orders": newOrder}},function(err,customer){
-				// console.log(customer);
-				// { _id: 578fed9a195674b8084543e9,
-				// 	updatedAt: 2016-07-20T21:40:10.998Z,
-				// 	createdAt: 2016-07-20T21:31:06.897Z,
-				// 	name: 'Sophia Kim',
-				// 	__v: 0,
-				// 	_orders:
-				// 	[ 578fedad195674b8084543ea,
-				// 	578fefba72ff57201e62261b,
-				// 	578fefba72ff57201e62261c ] 
-				// }
+
 				if(err){
 					var errorsArray=[];
 					for(var i in err.errors){
@@ -50,16 +35,9 @@ module.exports = (function(){
 					}
 					res.json({status:false, errors:errorsArray});	
 				}else{
+					// save the new order
 					newOrder.save(function(err, order){
-						// console.log(order);
-						// { __v: 0,
-						//   updatedAt: 2016-07-20T22:42:00.134Z,
-						//   createdAt: 2016-07-20T22:42:00.134Z,
-						//   name: 'Sophia Kim',
-						//   product: 'Nike Shoes',
-						//   quantity: 2,
-						//   _id: 578ffe3875a3cf3c221cbb13,
-						//   _customer: [] }
+
 						if(err){
 							var errorsArray=[];
 							for(var i in err.errors){
@@ -67,6 +45,7 @@ module.exports = (function(){
 							}
 							res.json({status:false, errors:errorsArray});
 						}else{
+							// update the new order with customer information
 							Order.findOneAndUpdate({_id: order._id},{$set:{"_customer": customer}}, function(err, order){
 								if(err){
 									var errorsArray=[];
@@ -75,6 +54,7 @@ module.exports = (function(){
 									}
 									res.json({status:false, errors:errorsArray});	
 								}else{
+									// find the product ordered
 									Product.findOne({item: req.body.product}, function(err, product){
 										if(err){
 											var errorsArray=[];
@@ -83,11 +63,13 @@ module.exports = (function(){
 											}
 											res.json({status:false, errors:errorsArray});
 										}else{
+											// product is found, now find out how many quantities of the item we have in stock
 											var newQuantity= product.quantity-req.body.quantity;
-											// console.log(newQuantity);
 											if(newQuantity<=0){
+												// if stock is less than or equal to 0, we have no more stock- sold out
 												res.json({status: false, errors: "Unable to fill quantity request"});
 											}else{
+												// if product found and quanity is not less than or equal to zero, update quantity
 												Product.findOneAndUpdate({_id:product._id},{$set:{quantity: newQuantity}}, function(err){
 													if(err){
 														var errorsArray=[];
@@ -96,6 +78,7 @@ module.exports = (function(){
 														}
 														res.json({status:false, errors:errorsArray});
 													}else{
+														// find all orders and send to front
 														Order.find({}, function(err, orders){
 															if(err){
 																var errorsArray=[];

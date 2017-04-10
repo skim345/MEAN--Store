@@ -4,7 +4,7 @@ myApp.controller('customerController', ['$scope', 'customerFactory', function($s
 	$scope.customers = [];
 
 	$scope.add = function(){
-		// console.log($scope.newCustomer);
+		// add new customer
 		customerFactory.add($scope.newCustomer, function(response){
 			if(!response.status){
 				$scope.errors.push(response.errors);
@@ -16,7 +16,7 @@ myApp.controller('customerController', ['$scope', 'customerFactory', function($s
 	}
 
 	$scope.destroy = function(customer){
-		// console.log(customer);
+		// delete a customer
 		customerFactory.destroy(customer._id, function(response){
 			if(!response.status){
 				$scope.errors.push(response.errors);
@@ -27,6 +27,7 @@ myApp.controller('customerController', ['$scope', 'customerFactory', function($s
 	}
 
 	customerFactory.getAll(function(response){
+		// get all customers
 		if(!response.status){
 				$scope.errors.push(response.errors);
 		}else{

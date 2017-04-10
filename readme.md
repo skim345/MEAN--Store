@@ -8,6 +8,7 @@
 * Dashboard showing most recent products, orders, and new customers who have joined the store
 * Filter of products, orders, and customers
 * Include quantity for products and update quantities as customers make an order for that product
+* Restful Routes
 
 ## Technologies Utilized 
 * MongoDB
@@ -15,6 +16,7 @@
 * Angular.js
 * Node.js
 * AWS
+* Nginx
 
 ![store](meanStore.PNG)
 ![store](meanStore2.PNG)

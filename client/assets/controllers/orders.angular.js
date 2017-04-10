@@ -3,6 +3,7 @@ myApp.controller('orderController', ['$scope', 'productFactory','customerFactory
 	
 	$scope.errors=[];
 
+	// Get all orders
 	orderFactory.getAllOrders(function(response){
 		if(!response.status){
 			$scope.errors.push(response.errors);
@@ -10,6 +11,7 @@ myApp.controller('orderController', ['$scope', 'productFactory','customerFactory
 			$scope.allOrders= response.orders;
 		}
 	})
+	// get all customers
 	customerFactory.getAll(function(response){
 		if(!response.status){
 			$scope.errors.push(response.errors);
@@ -17,6 +19,7 @@ myApp.controller('orderController', ['$scope', 'productFactory','customerFactory
 			$scope.allCustomers= response.customers;
 		}
 	})
+	// get all products
 	productFactory.getAllProducts(function(response){
 		if(!response.status){
 			$scope.errors.push(response.errors);
@@ -24,9 +27,8 @@ myApp.controller('orderController', ['$scope', 'productFactory','customerFactory
 			$scope.allProducts = response.products;
 		}
 	})
-
+	// create an order
 	$scope.createOrder= function(){
-		// console.log($scope.newOrder);
 		orderFactory.createOrder($scope.newOrder, function(response){
 			if(!response.status){
 				$scope.errors.push(response.errors);
